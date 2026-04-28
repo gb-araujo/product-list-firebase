@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Product List Firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicacao React para cadastro e controle simples de produtos por usuario, usando Firebase Authentication e Firebase Realtime Database.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Cadastro e login com email e senha.
+- Login com Google.
+- Listagem de produtos por usuario autenticado.
+- Cadastro de produto com descricao e quantidade.
+- Remocao de produtos.
+- Pagina de perfil e navegacao com React Router.
 
-### `npm start`
+## Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18
+- React Router DOM
+- Firebase Authentication
+- Firebase Realtime Database
+- Material UI
+- Bootstrap
+- Create React App
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Requisitos
 
-### `npm test`
+- Node.js 18 ou superior
+- NPM
+- Projeto Firebase configurado com Authentication e Realtime Database
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuracao
 
-### `npm run build`
+Configure as credenciais do Firebase no arquivo usado pela aplicacao em `src/components/firebaseConfig.js`. Use os dados do seu projeto no Firebase Console e mantenha chaves sensiveis fora do historico quando estiver trabalhando com ambientes reais.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Rodando localmente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/gb-araujo/product-list-firebase.git
+cd product-list-firebase
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A aplicacao sera aberta em `http://localhost:3000`.
 
-### `npm run eject`
+## Scripts disponiveis
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Comando | Descricao |
+| --- | --- |
+| `npm start` | Inicia o servidor de desenvolvimento |
+| `npm test` | Executa os testes do Create React App |
+| `npm run build` | Gera a versao de producao em `build/` |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Estrutura principal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+src/
+  components/
+    login.js              # Autenticacao com email/senha e Google
+    ListaDeProdutos.js    # CRUD de produtos por usuario
+    daoTask.js            # Acesso ao Realtime Database
+    Perfil.js             # Pagina de perfil
+  App.js                  # Rotas da aplicacao
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Proximos passos sugeridos
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Mover configuracoes de ambiente para `.env`.
+- Adicionar validacoes de formulario.
+- Criar feedback visual para carregamento e erros.
+- Adicionar testes para fluxo de autenticacao e produtos.
